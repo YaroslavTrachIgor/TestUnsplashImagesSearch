@@ -19,9 +19,8 @@ final class ImagesSearchViewController: UIViewController, ImagesSearchViewContro
     private let searchBar = UISearchBar()
     private var collectionView: UICollectionView!
     private var rows = [ImageAPIResult]()
-    private var presenter: ImagesSearchPresenterProtocol? {
-        return ImagesSearchPresenter(view: self)
-    }
+    
+    var presenter: ImagesSearchPresenterProtocol?
     
     //MARK: Lifecycle
     override func viewDidLoad() {

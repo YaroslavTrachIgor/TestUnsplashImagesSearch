@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: - Main Model
 final class ImageAPIResponse: Codable {
     var total: Int!
     var total_pages: Int!

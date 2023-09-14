@@ -20,6 +20,8 @@
 		CE8E37682AABFC4600BD5B9E /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E37672AABFC4600BD5B9E /* ImageCollectionViewCell.swift */; };
 		CE8E376A2AAC0E8E00BD5B9E /* ImagesSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E37692AAC0E8E00BD5B9E /* ImagesSearchPresenter.swift */; };
 		CE8E376C2AAC1D0B00BD5B9E /* FavouritesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E376B2AAC1D0B00BD5B9E /* FavouritesStorage.swift */; };
+		CE8E376E2AAF815600BD5B9E /* FavouriteImagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E376D2AAF815600BD5B9E /* FavouriteImagesPresenter.swift */; };
+		CE8E37D32AAFD07D00BD5B9E /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E37D22AAFD07D00BD5B9E /* UserDefault.swift */; };
 		CEA40E7E2AAB997F00105C48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA40E7D2AAB997F00105C48 /* AppDelegate.swift */; };
 		CEA40E802AAB997F00105C48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA40E7F2AAB997F00105C48 /* SceneDelegate.swift */; };
 		CEA40E852AAB997F00105C48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA40E832AAB997F00105C48 /* Main.storyboard */; };
@@ -62,6 +64,8 @@
 		CE8E37672AABFC4600BD5B9E /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE8E37692AAC0E8E00BD5B9E /* ImagesSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesSearchPresenter.swift; sourceTree = "<group>"; };
 		CE8E376B2AAC1D0B00BD5B9E /* FavouritesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesStorage.swift; sourceTree = "<group>"; };
+		CE8E376D2AAF815600BD5B9E /* FavouriteImagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteImagesPresenter.swift; sourceTree = "<group>"; };
+		CE8E37D22AAFD07D00BD5B9E /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		CEA40E7A2AAB997F00105C48 /* TestUnsplashImagesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestUnsplashImagesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA40E7D2AAB997F00105C48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEA40E7F2AAB997F00105C48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 		CE8E375F2AABDEC600BD5B9E /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				CE8E37CF2AAFD02C00BD5B9E /* Storages */,
 				CE8E37642AABDEF500BD5B9E /* Services */,
 				CE8E37622AABDEEB00BD5B9E /* Managers */,
 				CE8E37612AABDEE600BD5B9E /* Models */,
@@ -136,8 +141,8 @@
 		CE8E37602AABDEDA00BD5B9E /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				CE8E37592AABC35100BD5B9E /* UIExtensions.swift */,
-				CE8E37512AABB1FF00BD5B9E /* FoundationExtensions.swift */,
+				CE8E37D12AAFD05100BD5B9E /* PropertyWrappers */,
+				CE8E37D02AAFD04800BD5B9E /* Extensions */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -156,7 +161,6 @@
 				CE8E37552AABB4D600BD5B9E /* JSONHelper.swift */,
 				CE8E374F2AABB1C200BD5B9E /* APIHelper.swift */,
 				CE8E375B2AABC47100BD5B9E /* CasheManager.swift */,
-				CE8E376B2AAC1D0B00BD5B9E /* FavouritesStorage.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -172,9 +176,9 @@
 		CE8E37652AABDF4100BD5B9E /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
+				CE8E376F2AAF815D00BD5B9E /* Cells */,
 				CE8E374D2AABAE2E00BD5B9E /* FavouriteImagesTableViewController.swift */,
-				CE8E37492AABAE1B00BD5B9E /* FavouriteImageTableViewCell.swift */,
-				CE8E374A2AABAE1B00BD5B9E /* FavouriteImageTableViewCell.xib */,
+				CE8E376D2AAF815600BD5B9E /* FavouriteImagesPresenter.swift */,
 			);
 			path = Favourites;
 			sourceTree = "<group>";
@@ -187,6 +191,47 @@
 				CE8E37692AAC0E8E00BD5B9E /* ImagesSearchPresenter.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		CE8E376F2AAF815D00BD5B9E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE8E37492AABAE1B00BD5B9E /* FavouriteImageTableViewCell.swift */,
+				CE8E374A2AABAE1B00BD5B9E /* FavouriteImageTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CE8E37CF2AAFD02C00BD5B9E /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				CE8E376B2AAC1D0B00BD5B9E /* FavouritesStorage.swift */,
+			);
+			path = Storages;
+			sourceTree = "<group>";
+		};
+		CE8E37D02AAFD04800BD5B9E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE8E37592AABC35100BD5B9E /* UIExtensions.swift */,
+				CE8E37512AABB1FF00BD5B9E /* FoundationExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE8E37D12AAFD05100BD5B9E /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				CE8E37D22AAFD07D00BD5B9E /* UserDefault.swift */,
+			);
+			path = PropertyWrappers;
+			sourceTree = "<group>";
+		};
+		CE8E37F52AB27AD700BD5B9E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		CEA40E712AAB997F00105C48 = {
@@ -212,6 +257,7 @@
 		CEA40E7C2AAB997F00105C48 /* TestUnsplashImagesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				CE8E37F52AB27AD700BD5B9E /* Router */,
 				CE8E37602AABDEDA00BD5B9E /* Common */,
 				CE8E375F2AABDEC600BD5B9E /* Logic */,
 				CE8E375E2AABDEC200BD5B9E /* Modules */,
@@ -382,6 +428,8 @@
 				CE8E37542AABB36C00BD5B9E /* ImageAPIResponse.swift in Sources */,
 				CE8E37502AABB1C200BD5B9E /* APIHelper.swift in Sources */,
 				CE8E375C2AABC47100BD5B9E /* CasheManager.swift in Sources */,
+				CE8E37D32AAFD07D00BD5B9E /* UserDefault.swift in Sources */,
+				CE8E376E2AAF815600BD5B9E /* FavouriteImagesPresenter.swift in Sources */,
 				CEA40E7E2AAB997F00105C48 /* AppDelegate.swift in Sources */,
 				CEA40E802AAB997F00105C48 /* SceneDelegate.swift in Sources */,
 				CE8E374E2AABAE2E00BD5B9E /* FavouriteImagesTableViewController.swift in Sources */,
